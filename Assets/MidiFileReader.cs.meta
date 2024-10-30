@@ -3,7 +3,9 @@ guid: 6063d8dbce8f24a2fa5709ee7f57773e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - notePrefab: {fileID: 3489258526467374488, guid: 0fc506afb558d4eadafe2f613478441c, type: 3}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

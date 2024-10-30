@@ -592,9 +592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notePrefab: {fileID: 3489258526467374488, guid: 0fc506afb558d4eadafe2f613478441c, type: 3}
-  midiFilePath: /Users/lore/Desktop/PBL2/Despacito.mid
+  midiFilePath: Assets/Despacito.mid
   noteSpeed: 50
-  spawnHeight: 50
+  spawnHeight: 80
   bpm: 52
   audioSource: {fileID: 1935462422}
 --- !u!4 &1656442737
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80e38894b29f432bbb50828e8752f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midiFilePath: /Users/lore/Desktop/PBL2/Marriage_Damour_George_Davidson_Edition.mid
+  midiFilePath: Assets/Canon in D.mid
   audioSource: {fileID: 1935462422}
 --- !u!4 &1935462421
 Transform:

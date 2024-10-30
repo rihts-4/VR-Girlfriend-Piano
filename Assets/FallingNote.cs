@@ -1,27 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingNote : MonoBehaviour
 {
-    // no need for public fallSpeed here anymore since MidiFileReader.cs will control it
-    private float fallSpeed = 20.0f; // default fall speed if none is set (just in case)
+    private float fallSpeed = 20.0f; // Default fall speed
+    public double noteLength; // Store the note's length for playback
 
-    // method to set the fall speed from MidiFileReader.cs
     public void SetFallSpeed(float speed)
     {
-        fallSpeed = speed; // update the fall speed
+        fallSpeed = speed;
     }
 
     void Update()
     {
-        // make the note fall downwards using the speed set by MidiFileReader.cs
-        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime); // moves note down every frame
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
 
-        // destroy the note if it falls below a certain point (below the piano)
-        if (transform.position.y < -10) // adjust this value based on your scene layout
+        // Destroy note when it reaches below a threshold and play its corresponding sound
+        if (transform.position.y < -2)
         {
-            Destroy(gameObject); // get rid of the note after it goes offscreen
+            int midiNoteNumber = int.Parse(gameObject.name.Replace("Note_", ""));
+            FindObjectOfType<MidiFileReader>().PlayAudioForNoteOnDestruction(midiNoteNumber, noteLength);
+            Destroy(gameObject);
         }
     }
 }
